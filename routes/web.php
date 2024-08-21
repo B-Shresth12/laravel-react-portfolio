@@ -22,6 +22,8 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
+    Route::get('/site-setting-management', 'SiteSettingController@index')->name('setting.index');
+    Route::post('/site-setting-management/update', 'SiteSettingController@update')->name('setting.update');
 });
 
 

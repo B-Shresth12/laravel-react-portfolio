@@ -19,25 +19,13 @@
     <link id="themeColors" rel="stylesheet" href="../../dist/" /> --}}
     @routes
     @viteReactRefresh
-    @vite(['resources/css/admin.css', 'resources/js/script.js'])
+    @vite(['resources/css/admin.css','resources/js/script.js'])
     @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
     @inertiaHead
 </head>
 
 <body>
     @inertia
-    <!--  Import Js Files -->
-    {{-- <script src="../../dist/libs/jquery/dist/jquery.min.js"></script>
-    <script src="../../dist/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="../../dist/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--  core files -->
-    <script src="../../dist/js/app.min.js"></script>
-    <script src="../../dist/js/app.init.js"></script>
-    <script src="../../dist/js/app-style-switcher.js"></script>
-    <script src="../../dist/js/sidebarmenu.js"></script>
-    
-    <script src="../../dist/js/custom.js"></script> 
-    --}}
 </body>
 
 </html>
