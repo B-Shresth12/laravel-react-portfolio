@@ -37,6 +37,11 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'flash' => [
+                'success' => $request->session()->get('success'),
+                'error' => $request->session()->get('error'),
+                'faviconPath' => $request->session()->get('faviconPath'),
+            ],
         ];
     }
 }

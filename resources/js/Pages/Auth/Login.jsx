@@ -1,9 +1,11 @@
-import { useState } from "react";
 import { Head, Link, useForm } from "@inertiajs/react";
 import LoginLayout from "@/Layouts/LoginLayout";
 import CheckBox from "@/Components/CheckBox";
 import UngroupedInput from "@/Components/UngroupedInput";
 import Button from "@/Components/Button";
+import { getImageUrl } from "@/Helper/Helper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors } = useForm({
@@ -31,14 +33,16 @@ export default function Login({ status, canResetPassword }) {
                                         className="text-nowrap logo-img text-center d-block mb-5 w-100"
                                     >
                                         <img
-                                            src="../../assets/images/logos/dark-logo.svg"
+                                            src={getImageUrl(
+                                                "storage/images/logos/dark-logo.svg"
+                                            )}
                                             width="180"
                                             alt=""
                                         />
                                     </Link>
                                     {errors.email ? (
                                         <div
-                                            class="alert alert-danger"
+                                            className="alert alert-danger"
                                             role="alert"
                                         >
                                             {errors.email}
@@ -90,8 +94,15 @@ export default function Login({ status, canResetPassword }) {
                                                 )
                                             }
                                         />
-                                        <Button className="btn btn-primary w-100 py-8 mb-4 rounded-2">
-                                            Log In
+                                        <Button
+                                            className="btn btn-primary w-100 py-8 mb-4 rounded-2"
+                                            disabled={processing}
+                                        >
+                                            {processing ? (
+                                                <i className="fa-solid fa-spinner fa-spin"></i>
+                                            ) : (
+                                                "Log In"
+                                            )}
                                         </Button>
                                     </form>
                                 </div>

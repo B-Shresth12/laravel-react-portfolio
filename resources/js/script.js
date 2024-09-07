@@ -9,8 +9,4 @@ import "../assets/js/app-style-switcher.js";
 import "../assets/js/sidebarmenu.js";
 import "../assets/js/custom.js";
 
-import "../assets/js/bootstrap-tagsinput.js";
-
-$("input").tagsinput({
-    tagClass: "big",
-});
+import "https://kit.fontawesome.com/54bdad6c30.js";

@@ -10,13 +10,13 @@
     <meta name="handheldfriendly" content="true" />
     <meta name="MobileOptimized" content="width" />
     <meta name="description" content="Mordenize" />
-    <meta name="author" content="" />
+    <meta name="author" content="Bishal Shrestha" />
     <meta name="keywords" content="Mordenize" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--  Favicon -->
-    {{-- <link rel="shortcut icon" type="image/png" href="../../dist/images/logos/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('/storage/setting/32x32_' . @$setting->favicon) }}" />
     <!-- Core Css -->
-    <link id="themeColors" rel="stylesheet" href="../../dist/" /> --}}
+    {{-- <link id="themeColors" rel="stylesheet" href="../../dist/" /> --}}
     @routes
     @viteReactRefresh
     @vite(['resources/css/admin.css','resources/js/script.js'])

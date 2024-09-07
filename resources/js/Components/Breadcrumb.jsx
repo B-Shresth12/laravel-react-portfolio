@@ -1,4 +1,6 @@
+import { getbreadCrumbMenu } from "@/Helper/Helper";
 export default function Breadcrumb() {
+    const breadCrumb = getbreadCrumbMenu();
     return (
         <div className="card bg-light-info shadow-none position-relative overflow-hidden">
             <div className="card-body px-4 py-3">
@@ -10,19 +12,19 @@ export default function Breadcrumb() {
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item">
-                                    <a
-                                        className="text-muted "
-                                        href="/admin"
-                                    >
+                                    <a className="text-muted " href="/admin">
                                         <i className="ti ti-home"></i>
                                     </a>
                                 </li>
-                                <li
-                                    className="breadcrumb-item"
-                                    aria-current="page"
-                                >
-                                    Site Setting Management
-                                </li>
+                                {breadCrumb.map((name, index) => (
+                                    <li
+                                        key={index}
+                                        className="breadcrumb-item"
+                                        aria-current="page"
+                                    >
+                                        {name}
+                                    </li>
+                                ))}
                             </ol>
                         </nav>
                     </div>

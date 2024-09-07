@@ -39,7 +39,7 @@ class Helper
             }
 
             // Save the processed image with specified extension
-            $cover = storage_path('app/public/' . $filename);
+            $cover = storage_path('app/' . $filename);
             $image->encodeByExtension($fileExtension)->save($cover);
 
             return true; // Return true on successful save

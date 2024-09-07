@@ -1,4 +1,4 @@
-import getImageUrl from "@/Helper/Helper";
+import { getImageUrl } from "@/Helper/Helper";
 
 export default function PreLoader({}) {
     return (

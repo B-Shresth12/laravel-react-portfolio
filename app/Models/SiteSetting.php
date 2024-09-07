@@ -23,8 +23,8 @@ class SiteSetting extends Model
         "og_meta_title",
         "og_meta_description",
         "og_image",
-        "logo",
         "favicon",
-        "apple_touch"
+        "apple_touch",
+        "banner"
     ];
 }

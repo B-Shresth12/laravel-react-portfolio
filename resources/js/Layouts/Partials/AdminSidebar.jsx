@@ -1,8 +1,8 @@
 import { Link } from "@inertiajs/react";
-import SidebarMenuWithDropDown from "../Components/SidebarMenuWithDropDown";
+import SidebarMenuWithDropDown from "@/Components/SidebarMenuWithDropDown";
 import SidebarMenu from "@/Components/SidebarMenu";
 import SidebarLabel from "@/Components/SidebarLabel";
-import getImageUrl from "@/Helper/Helper";
+import { getImageUrl, getRoute } from "@/Helper/Helper";
 
 export default function AdminSidebar() {
     return (
@@ -70,7 +70,7 @@ export default function AdminSidebar() {
                                             <SidebarLabel name="Dashboard" />
 
                                             <SidebarMenu
-                                                route="/admin"
+                                                route={getRoute("admin")}
                                                 icon="ti ti-dashboard"
                                             >
                                                 Dashboard
@@ -78,7 +78,9 @@ export default function AdminSidebar() {
 
                                             <SidebarLabel name="Site Setting Management" />
                                             <SidebarMenu
-                                                route="/admin/site-setting-management"
+                                                route={getRoute(
+                                                    "admin/site-setting-management"
+                                                )}
                                                 icon="ti ti-settings"
                                             >
                                                 Site Setting

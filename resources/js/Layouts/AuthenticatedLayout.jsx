@@ -1,6 +1,6 @@
 import { Link } from "@inertiajs/react";
-import AdminSidebar from "./AdminSidebar";
-import AdminHeader from "./Partials/AdminHeader";
+import AdminSidebar from "@/Layouts/Partials/AdminSidebar";
+import AdminHeader from "@/Layouts/Partials/AdminHeader";
 import PreLoader from "@/Components/PreLoader";
 export default function AuthenticatedLayout({ children }) {
     return (

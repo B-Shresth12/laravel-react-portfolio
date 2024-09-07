@@ -27,6 +27,7 @@ return new class extends Migration
             //images
             $table->string('favicon');
             $table->string('apple_touch');
+            $table->string('banner');
 
             // Meta Inputs
             $table->text('og_meta_title')->nullable();

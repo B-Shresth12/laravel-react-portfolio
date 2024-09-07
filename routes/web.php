@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\ProfileController;
 use GuzzleHttp\Middleware;
 use Illuminate\Foundation\Application;
@@ -16,14 +17,14 @@ Route::get('/', function () {
     ]);
 });
 
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->namespace('App\Http\Controllers\Admin')->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
-    Route::get('/site-setting-management', 'SiteSettingController@index')->name('setting.index');
-    Route::post('/site-setting-management/update', 'SiteSettingController@update')->name('setting.update');
+
+    Route::prefix('site-setting-management')->name('setting.')->controller('SiteSettingController')->group(function () {
+        Route::get('', 'index')->name('index');
+        Route::post('/update', 'update')->name('update');
+        Route::post('/udpdate-seo', 'updateSEO')->name('updateSEO');
+    });
 });
 
 

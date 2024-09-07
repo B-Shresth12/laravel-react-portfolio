@@ -1,10 +1,9 @@
+import { checkCurrentURL } from "@/Helper/Helper";
 import { Link, usePage } from "@inertiajs/react";
 import { useState } from "react";
 
 export default function SidebarMenu({ route, children, icon }) {
-    const { url } = usePage();
-    const isActive = url === route;
-
+    const isActive = checkCurrentURL(route);
     return (
         <li className={`sidebar-item ${isActive ? "selected" : ""}`}>
             <Link
